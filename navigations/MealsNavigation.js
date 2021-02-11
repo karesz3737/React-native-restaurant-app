@@ -192,7 +192,7 @@ const FilterStacknavigator = () => {
         name="Filters"
         component={Filters}
         options={{ headerTitle: "Filters" }}
-        options={({ navigation }) => ({
+        options={({ navigation, route }) => ({
           headerTitle: "Filters",
           headerStyle: {
             backgroundColor: Platform.OS === "ios" ? colors.primary : "#f5d314",
@@ -206,6 +206,19 @@ const FilterStacknavigator = () => {
                   iconName="ios-menu"
                   onPress={() => {
                     navigation.openDrawer();
+                  }}
+                />
+              </HeaderButtons>
+            );
+          },
+          headerRight: () => {
+            return (
+              <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+                <Item
+                  title="Save"
+                  iconName="ios-save"
+                  onPress={() => {
+                    navigation.getParam("save");
                   }}
                 />
               </HeaderButtons>

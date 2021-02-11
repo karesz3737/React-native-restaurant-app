@@ -8,7 +8,7 @@ import {
   Platform,
   ImageBackground,
 } from "react-native";
-
+import DefaultTextWrapper from "./DeafaultTextWrapper";
 const DisplayButton =
   Platform.OS === "android" && Platform.Version >= 21
     ? TouchableNativeFeedback
@@ -32,9 +32,15 @@ const MealItem = (props) => {
             </ImageBackground>
           </View>
           <View style={{ ...StyleSheet.mealRow, ...styles.mealDeatail }}>
-            <Text>{props.duration}m</Text>
-            <Text>{props.complexity.toUpperCase()}</Text>
-            <Text>{props.affordability.toUpperCase()}</Text>
+            <DefaultTextWrapper>
+              <Text>{props.duration}m</Text>
+            </DefaultTextWrapper>
+            <DefaultTextWrapper>
+              <Text>{props.complexity.toUpperCase()}</Text>
+            </DefaultTextWrapper>
+            <DefaultTextWrapper>
+              <Text>{props.affordability.toUpperCase()}</Text>
+            </DefaultTextWrapper>
           </View>
         </View>
       </DisplayButton>

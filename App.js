@@ -13,7 +13,7 @@ export default function App() {
   const [isLoded, setIsLoaded] = useState(false);
   const fetchFonts = () => {
     return Font.loadAsync({
-      "oppen-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
+      "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
       "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
     });
   };
