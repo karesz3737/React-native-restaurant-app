@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import FilterSwitch from "../components/FilterSwitch";
+import { useDispatch } from "react-redux";
+import { addFilters } from "../store/actions/index";
 import { LogBox } from "react-native";
 LogBox.ignoreLogs([
   "Non-serializable values were found in the navigation state",
@@ -12,6 +14,7 @@ const Filters = (props) => {
   const [isLactoseFree, setIslactoseFree] = useState(false);
   const [isVegan, setIsVegan] = useState(false);
   const [isVegetarian, setIsVegetarian] = useState(false);
+  const dispatch = useDispatch();
   const saveFilters = useCallback(() => {
     const appliedFilters = {
       glutenFree: isGlutenFree,
@@ -19,7 +22,8 @@ const Filters = (props) => {
       vegan: isVegan,
       vegetarian: isVegetarian,
     };
-  }, [isGlutenFree, isLactoseFree, isVegan, isVegetarian]);
+    dispatch(addFilters(appliedFilters));
+  }, [isGlutenFree, isLactoseFree, isVegan, isVegetarian, dispatch]);
   useEffect(() => {
     navigation.setParams({ save: saveFilters });
   }, [saveFilters]);

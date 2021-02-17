@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   titleContainer: {
-    backgroundColor: "rgba(0,0,0,0.7)",
+    backgroundColor: "#cccc",
   },
   title: {
     fontFamily: "open-sans-bold",

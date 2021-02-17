@@ -42,9 +42,9 @@ const styles = StyleSheet.create({
       Platform.OS === "android" && Platform.version >= 21
         ? "hidden"
         : "visible",
-    elevation: 5,
-    shadowColor: "black",
-    shadowOpacity: 0.26,
+    elevation: 4,
+    shadowColor: "#ccc",
+    shadowOpacity: 0.2,
     shadowOffset: { width: 0, height: 2 },
   },
   header: {
