@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useCallback } from "react";
 import {
   View,
   Text,
@@ -8,7 +8,8 @@ import {
   Dimensions,
 } from "react-native";
 import DefaultTextWrapper from "../components/DeafaultTextWrapper";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addFavorite } from "../store/actions/index";
 
 const ListItem = (props) => {
   return (
@@ -18,15 +19,30 @@ const ListItem = (props) => {
   );
 };
 
-const MealDetail = (props) => {
-  const { id, title } = props.route.params;
+const MealDetail = ({ route, navigation }) => {
+  const { id } = route.params;
+  const dispatch = useDispatch();
+  const favoriteisCurrent = useSelector((state) =>
+    state.meals.favoriteMeals.some((meal) => meal.id === id)
+  );
   const mealSelected = useSelector((state) => state.meals.meals);
   const selectedMeal = mealSelected.find((meal) => meal.id === id);
+  const dispatchFavorite = useCallback(() => {
+    dispatch(addFavorite(id));
+  }, [dispatch, id]);
+
+  useEffect(() => {
+    navigation.setParams({ addFavorite: dispatchFavorite });
+  }, [selectedMeal]);
+
+  useEffect(() => {
+    navigation.setParams({ isFavorite: favoriteisCurrent });
+  }, [favoriteisCurrent]);
   return (
     <ScrollView>
       <Image source={{ uri: selectedMeal.imageUrl }} style={styles.image} />
       <View style={styles.details}>
-        <DefaultTextWrapper>
+        <DefaultTextWrapper style={styles.listitem}>
           <Text>{selectedMeal.duration}m</Text>
         </DefaultTextWrapper>
         <DefaultTextWrapper>

@@ -19,14 +19,14 @@ export const CustomHeaderButton = (props) => {
     />
   );
 };
-
-const CustomButton = () => {
+// "ios-star"
+const CustomButton = (props) => {
   return (
     <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
       <Item
         title="favorite"
-        iconName="ios-star"
-        onPress={() => console.log("HI there")}
+        iconName={props.my.isFavorite ? "ios-star" : "ios-star-outline"}
+        onPress={() => props.my.addFavorite()}
       />
     </HeaderButtons>
   );

@@ -15,7 +15,6 @@ import Filters from "../screens/Filters";
 import { CustomHeaderButton } from "../components/HeaderButton";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 
-
 const Stack = createStackNavigator();
 
 const MealNavigator = () => {
@@ -55,7 +54,10 @@ const MealNavigator = () => {
           headerStyle: {
             backgroundColor: Platform.OS === "ios" ? colors.primary : "#f5d314",
           },
-          headerTitleStyle: { fontFamily: "open-sans-bold" },
+          headerTitleStyle: {
+            fontFamily: "open-sans-bold",
+          },
+          headerTintColor: "white",
         })}
       />
       <Stack.Screen
@@ -63,7 +65,7 @@ const MealNavigator = () => {
         component={MealDetail}
         options={({ route }) => ({
           headerTitle: route.params.title,
-          headerRight: () => <CustomButton />,
+          headerRight: () => <CustomButton my={route.params} />,
           headerStyle: {
             backgroundColor: Platform.OS === "ios" ? colors.primary : "#f5d314",
           },
@@ -71,6 +73,7 @@ const MealNavigator = () => {
           headerBackTitleStyle: {
             fontFamily: "open-sans",
           },
+          headerTintColor: "white",
         })}
       />
     </Stack.Navigator>
