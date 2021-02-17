@@ -1,12 +1,20 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
 import { enableScreens } from "react-native-screens";
 import { MainNavigation } from "./navigations/MealsNavigation";
-import { MealtabNavigator } from "./navigations/MealsNavigation";
 import { NavigationContainer } from "@react-navigation/native";
+import { combineReducers, createStore } from "redux";
+import { Provider } from "react-redux";
+import MainReducer from "./store/reducers/index";
+
+
+const reducers = combineReducers({
+  meals: MainReducer,
+});
+const store = createStore(reducers);
+
 enableScreens();
 
 export default function App() {
@@ -29,10 +37,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <NavigationContainer>
-        {/* <MealtabNavigator /> */}
-        <MainNavigation />
-      </NavigationContainer>
+      <Provider store={store}>
+        <NavigationContainer>
+          <MainNavigation />
+        </NavigationContainer>
+      </Provider>
     </View>
   );
 }

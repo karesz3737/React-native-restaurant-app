@@ -1,16 +1,16 @@
 import React from "react";
-import { MEALS } from "../data/dummy-data";
 import MealList from "../components/MealList";
+import { useSelector } from "react-redux";
 
 const Categorymeals = ({ route, navigation }) => {
   const { categoryId } = route.params;
-  const displayMeals = MEALS.filter(
+  const mealsCurrent = useSelector((state) => state.meals.filteredMeals);
+
+  const displayMeals = mealsCurrent.filter(
     (meal) => meal.categoryIds.indexOf(categoryId) >= 0
   );
 
   return <MealList navigation={navigation} listData={displayMeals} />;
 };
-
-
 
 export default Categorymeals;

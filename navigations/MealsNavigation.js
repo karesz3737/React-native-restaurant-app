@@ -1,6 +1,5 @@
 import React from "react";
 import { Platform, Dimensions } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Categories from "../screens/Categories";
@@ -15,6 +14,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import Filters from "../screens/Filters";
 import { CustomHeaderButton } from "../components/HeaderButton";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
+
 
 const Stack = createStackNavigator();
 
@@ -217,9 +217,7 @@ const FilterStacknavigator = () => {
                 <Item
                   title="Save"
                   iconName="ios-save"
-                  onPress={() => {
-                    navigation.getParam("save");
-                  }}
+                  onPress={() => route.params["save"]}
                 />
               </HeaderButtons>
             );

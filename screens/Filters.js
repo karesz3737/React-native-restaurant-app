@@ -1,25 +1,29 @@
-import React, { useState, useEffect,useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import FilterSwitch from "../components/FilterSwitch";
+import { LogBox } from "react-native";
+LogBox.ignoreLogs([
+  "Non-serializable values were found in the navigation state",
+]);
 
 const Filters = (props) => {
-  const { navigation } = props;
+  const { navigation, setParams } = props;
   const [isGlutenFree, setGlutenFree] = useState(false);
   const [isLactoseFree, setIslactoseFree] = useState(false);
   const [isVegan, setIsVegan] = useState(false);
   const [isVegetarian, setIsVegetarian] = useState(false);
-  const saveFilters = () => {
+  const saveFilters = useCallback(() => {
     const appliedFilters = {
       glutenFree: isGlutenFree,
       lactoseFree: isLactoseFree,
       vegan: isVegan,
       vegetarian: isVegetarian,
     };
-    console.log(appliedFilters);
-  };
+  }, [isGlutenFree, isLactoseFree, isVegan, isVegetarian]);
   useEffect(() => {
     navigation.setParams({ save: saveFilters });
-  }, [saveFilters, navigation]);
+  }, [saveFilters]);
+
   return (
     <View style={styles.screens}>
       <Text style={styles.title}>Filters And Restrictions</Text>
