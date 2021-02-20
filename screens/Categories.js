@@ -12,12 +12,13 @@ const Categories = (props) => {
         id={itemData.item.id}
         navigation={props.navigation}
         color={itemData.item.color}
+        image={itemData.item.image}
       />
     );
   };
   return (
     <View style={styles.screens}>
-      <FlatList numColumns={2} data={CATEGORIES} renderItem={renderGridItem} />
+      <FlatList data={CATEGORIES} renderItem={renderGridItem} />
     </View>
   );
 };
@@ -25,8 +26,6 @@ const Categories = (props) => {
 const styles = StyleSheet.create({
   screens: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
 });
 

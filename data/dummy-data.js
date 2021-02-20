@@ -1,17 +1,66 @@
 import Category from "../models/category";
 import Meal from "../models/meals";
-
 export const CATEGORIES = [
-  new Category("c1", "Italian", "#f5428d"),
-  new Category("c2", "Quick & Easy", "#f54234"),
-  new Category("c3", "Hamburgers", "#f5a442"),
-  new Category("c4", "German", "#f5d142"),
-  new Category("c5", "Light & Lovely", "#368dff"),
-  new Category("c6", "Exotic", "#41d95d"),
-  new Category("c7", "Breakfast", "#9eecff"),
-  new Category("c8", "Asian", "#b9ffb0"),
-  new Category("c9", "French", "#ffc7ff"),
-  new Category("c10", "Summer", "#47fced"),
+  new Category(
+    "c1",
+    "Italian",
+    "#dfe0c5",
+    "https://upload.wikimedia.org/wikipedia/commons/0/01/Orecchiette_al_Pomodoro.jpg"
+  ),
+  new Category(
+    "c2",
+    "Quick & Easy",
+    "#c0e7ed",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/AfternoonTea.JPG/1280px-AfternoonTea.JPG"
+  ),
+  new Category(
+    "c3",
+    "Hamburgers",
+    "#b5cf76",
+    "https://upload.wikimedia.org/wikipedia/commons/9/9a/Big_Mac_hamburger.jpg"
+  ),
+  new Category(
+    "c4",
+    "German",
+    "#e7eb7a",
+    "https://upload.wikimedia.org/wikipedia/commons/b/b0/German_Bratw%C3%BCrste.jpg"
+  ),
+  new Category(
+    "c5",
+    "Light & Lovely",
+    "#74bce8",
+    "https://upload.wikimedia.org/wikipedia/commons/6/66/Paella_de_marisco_01_%28cropped%29_4.3.jpg"
+  ),
+  new Category(
+    "c6",
+    "Exotic",
+    "#8ab57b",
+    "https://upload.wikimedia.org/wikipedia/commons/1/19/Jerk_chicken_plate.jpg"
+  ),
+  new Category(
+    "c7",
+    "Breakfast",
+    "#9eecff",
+    "https://upload.wikimedia.org/wikipedia/commons/f/f7/Eggs%2C_parmesan_and_carrots_with_cream.jpeg"
+  ),
+  new Category(
+    "c8",
+    "Asian",
+    "#b9ffb0",
+    "https://upload.wikimedia.org/wikipedia/commons/4/4d/B%C3%BAn_ch%E1%BA%A3_Vietnamese_food.jpg"
+  ),
+  new Category(
+    "c9",
+    "French",
+    "#edd3eb",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hunter%27s_chicken_%282%29.jpg/640px-Hunter%27s_chicken_%282%29.jpg"
+  ),
+  new Category(
+    "c10",
+    "Summer",
+    "#47fced",
+    "https://upload.wikimedia.org/wikipedia/commons/5/5e/Mixed_Berry_Pavlova.jpg"
+  ),
 ];
 
 export const MEALS = [

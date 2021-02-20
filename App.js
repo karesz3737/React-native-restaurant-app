@@ -9,7 +9,6 @@ import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
 import MainReducer from "./store/reducers/index";
 
-
 const reducers = combineReducers({
   meals: MainReducer,
 });
