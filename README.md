@@ -32,7 +32,7 @@ Two types of Button components were used here. For Android TouchableNativeFeedba
 After clicking on the button the user gets navigated to Category Meals Screen
 ```
 
-[![Main.png](https://i.postimg.cc/kgGDFF1n/Main.png)](https://postimg.cc/0zg89m13) | [![MainS.png](https://i.postimg.cc/rptm7y23/MainS.png)](https://postimg.cc/f3DD9NLf)
+[![Main.png](https://i.postimg.cc/kgGDFF1n/Main.png)](https://postimg.cc/0zg89m13)                     [![MainS.png](https://i.postimg.cc/rptm7y23/MainS.png)](https://postimg.cc/f3DD9NLf)
 
 
 
