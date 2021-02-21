@@ -15,6 +15,9 @@ import Filters from "../screens/Filters";
 import { CustomHeaderButton } from "../components/HeaderButton";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 
+const platformColor = Platform.OS === "android" ? "white" : colors.primary;
+const TabColor = Platform.OS === "android" ? colors.secondary : "white";
+
 const Stack = createStackNavigator();
 
 const MealNavigator = () => {
@@ -26,7 +29,8 @@ const MealNavigator = () => {
         options={({ navigation }) => ({
           headerTitle: "Meal Categories",
           headerStyle: {
-            backgroundColor: Platform.OS === "ios" ? colors.primary : "#f5d314",
+            backgroundColor:
+              Platform.OS === "ios" ? colors.primary : colors.secondary,
           },
           headerTintColor: "white",
           headerBackTitleStyle: { fontFamily: "open-sans-bold" },
@@ -52,7 +56,8 @@ const MealNavigator = () => {
         options={({ route }) => ({
           headerTitle: route.params.title,
           headerStyle: {
-            backgroundColor: Platform.OS === "ios" ? colors.primary : "#f5d314",
+            backgroundColor:
+              Platform.OS === "ios" ? colors.primary : colors.secondary,
           },
           headerTitleStyle: {
             fontFamily: "open-sans-bold",
@@ -67,7 +72,8 @@ const MealNavigator = () => {
           headerTitle: route.params.title,
           headerRight: () => <CustomButton my={route.params} />,
           headerStyle: {
-            backgroundColor: Platform.OS === "ios" ? colors.primary : "#f5d314",
+            backgroundColor:
+              Platform.OS === "ios" ? colors.primary : colors.secondary,
           },
 
           headerBackTitleStyle: {
@@ -89,7 +95,8 @@ const FavoriteStackNavigator = () => {
         options={({ navigation }) => ({
           headerTitle: "Meal Categories",
           headerStyle: {
-            backgroundColor: Platform.OS === "ios" ? colors.primary : "#f5d314",
+            backgroundColor:
+              Platform.OS === "ios" ? colors.primary : colors.secondary,
           },
           headerTintColor: "white",
           headerLeft: () => {
@@ -113,7 +120,8 @@ const FavoriteStackNavigator = () => {
         options={({ navigation }) => ({
           headerTitle: "Meal Categories",
           headerStyle: {
-            backgroundColor: Platform.OS === "ios" ? colors.primary : "#f5d314",
+            backgroundColor:
+              Platform.OS === "ios" ? colors.primary : colors.secondary,
           },
           headerTintColor: "white",
           headerLeft: () => {
@@ -162,11 +170,11 @@ export const MealtabNavigator = () => {
               <Ionicons
                 name="ios-restaurant"
                 size={25}
-                color={focused ? colors.primary : "silver"}
+                color={focused ? platformColor : "#d6d3e0"}
               />
             );
           },
-          tabBarColor: "#f5d314",
+          tabBarColor: TabColor,
         }}
       />
       <Tab.Screen
@@ -178,10 +186,11 @@ export const MealtabNavigator = () => {
               <Ionicons
                 name="ios-star"
                 size={25}
-                color={focused ? colors.primary : "silver"}
+                color={focused ? platformColor : "#d6d3e0"}
               />
             );
           },
+          tabBarColor: TabColor,
         }}
       />
     </Tab.Navigator>
@@ -198,7 +207,8 @@ const FilterStacknavigator = () => {
         options={({ navigation, route }) => ({
           headerTitle: "Filters",
           headerStyle: {
-            backgroundColor: Platform.OS === "ios" ? colors.primary : "#f5d314",
+            backgroundColor:
+              Platform.OS === "ios" ? colors.primary : colors.secondary,
           },
           headerTintColor: "white",
           headerLeft: () => {
@@ -246,9 +256,9 @@ export const MainNavigation = () => {
       <Drawer.Screen
         name="FavMeals"
         component={MealtabNavigator}
-        title="Favorite Meals"
-        headerTitle="Favorite Meals"
-        options={{ drawerLabel: "Favorite Meals" }}
+        title="Meals"
+        headerTitle="Meals"
+        options={{ drawerLabel: "Meals" }}
       />
       <Drawer.Screen
         name="filters"

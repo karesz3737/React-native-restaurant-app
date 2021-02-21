@@ -9,15 +9,16 @@ const FilterSwitch = (props) => {
       <Switch
         value={props.value}
         onValueChange={props.onChange}
-        trackColor={{ true: colors.primary }}
-        thumbColor={Platform.OS === "android" ? colors.primary : "white"}
+        trackColor={{
+          true: Platform.OS === "android" ? "#ccc" : colors.primary,
+        }}
+        thumbColor={Platform.OS === "android" ? colors.secondary : "white"}
       />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-
   container: {
     flexDirection: "row",
     justifyContent: "space-between",

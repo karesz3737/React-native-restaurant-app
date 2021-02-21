@@ -18,9 +18,6 @@ const TitleButton =
     : TouchableOpacity;
 
 const CategoryGridTitle = ({ title, id, navigation, color, image }) => {
-  // console.log(image);
-  const img = "../images/breakfast.png";
-  const ii = "../images/italian.png";
   return (
     <View style={[styles.gridItem]}>
       <TitleButton
@@ -37,7 +34,13 @@ const CategoryGridTitle = ({ title, id, navigation, color, image }) => {
         </View>
         <ImageBackground
           source={{ uri: `${image}` }}
-          style={{ width: "100%", height: "90%" }}
+          style={styles.imageBackStyle}
+          imageStyle={{
+            resizeMode: "cover",
+            height: 170,
+            top: 0,
+            resizeMode: "cover",
+          }}
         />
       </TitleButton>
     </View>
@@ -71,7 +74,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: "center",
     justifyContent: "center",
-    paddingVertical: 15,
+    paddingVertical: 10,
+  },
+  imageBackStyle: {
+    width: "100%",
+    height: "90%",
+    overflow: "hidden",
   },
 });
 export default CategoryGridTitle;
