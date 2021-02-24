@@ -32,8 +32,8 @@ Two types of Button components were used here. For Android TouchableNativeFeedba
 After clicking on the button the user gets navigated to Category Meals Screen
 ```
 
-[![Main.png](https://i.postimg.cc/kgGDFF1n/Main.png)](https://postimg.cc/0zg89m13)       ![#fff](https://via.placeholder.com/15/fff/000000?text=+) 
-              [![MainS.png](https://i.postimg.cc/rptm7y23/MainS.png)](https://postimg.cc/f3DD9NLf)
+[![Main.png](https://i.postimg.cc/kgGDFF1n/Main.png)](https://postimg.cc/0zg89m13)       [![MainS.png](https://i.postimg.cc/rptm7y23/MainS.png)](https://postimg.cc/f3DD9NLf)
+             
 
 
 
@@ -46,8 +46,8 @@ After clicking on the screen user gets navigated to Meal Detail Screen.
 
 ```
 
-[![Category.png](https://i.postimg.cc/fRmpP1g5/Category.png)](https://postimg.cc/ZWYwBsmy)
-[![category-S.png](https://i.postimg.cc/7LMv5j3b/category-S.png)](https://postimg.cc/cKHkj95N)
+[![Category.png](https://i.postimg.cc/fRmpP1g5/Category.png)](https://postimg.cc/ZWYwBsmy) [![category-S.png](https://i.postimg.cc/7LMv5j3b/category-S.png)](https://postimg.cc/cKHkj95N)
+
 
 # Meal Detail Screen
 
@@ -57,8 +57,8 @@ By clicking the star icon in the header the addfavorite action gets dispatched a
 
 ```
 
-[![Detail.png](https://i.postimg.cc/cJqgxth0/Detail.png)](https://postimg.cc/MnDKtTgF)
-[![DetailS.png](https://i.postimg.cc/QMktj4VJ/DetailS.png)](https://postimg.cc/1gXPHKG8)
+[![Detail.png](https://i.postimg.cc/cJqgxth0/Detail.png)](https://postimg.cc/MnDKtTgF) [![DetailS.png](https://i.postimg.cc/QMktj4VJ/DetailS.png)](https://postimg.cc/1gXPHKG8)
+
 
 # Favorite Screen
 
@@ -68,8 +68,8 @@ If a user added a favorite dish the data will be fetched by using the useSelecto
 
 ```
 
-[![Favorite-S.png](https://i.postimg.cc/vHfDPZMK/Favorite-S.png)](https://postimg.cc/HVWpnHr0)
-[![Favorites.png](https://i.postimg.cc/Gph2hPY0/Favorites.png)](https://postimg.cc/JsvmpkPK)
+[![Favorite-S.png](https://i.postimg.cc/vHfDPZMK/Favorite-S.png)](https://postimg.cc/HVWpnHr0) [![Favorites.png](https://i.postimg.cc/Gph2hPY0/Favorites.png)](https://postimg.cc/JsvmpkPK)
+
 
 # Filters Screen
 
@@ -81,5 +81,5 @@ By tapping the save icon the app will rerender and the addFilters action gets di
 By dispatching the action the next rerender will be from the filteredMeals redux state.
 ```
 
-[![FiltersS.png](https://i.postimg.cc/wvQ0cpMR/FiltersS.png)](https://postimg.cc/WFtGTxMs)
-[![Filters.png](https://i.postimg.cc/VL6DM285/Filters.png)](https://postimg.cc/s1kYC61R)
+[![FiltersS.png](https://i.postimg.cc/wvQ0cpMR/FiltersS.png)](https://postimg.cc/WFtGTxMs) [![Filters.png](https://i.postimg.cc/VL6DM285/Filters.png)](https://postimg.cc/s1kYC61R)
+
